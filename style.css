@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px;
+  /* Hide the checkbox input visually but keep it accessible */
+  /* When menu is open, show the links */
+}
+.navbar__logo {
+  color: white;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.navbar__links {
+  display: none; /* Hidden on small screens */
+  flex-direction: column;
+  width: 100%;
+  background-color: #333;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 2;
+  list-style: none;
+}
+.navbar__links li {
+  text-align: center;
+  padding: 15px 0;
+}
+.navbar__links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+.navbar__links--open, .navbar__menu-toggle:checked + .navbar__hamburger + .navbar__links {
+  display: flex;
+}
+.navbar__hamburger {
+  display: block;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+}
+.navbar__menu-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+@media screen and (min-width: 769px) {
+  .navbar__links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    justify-content: space-between;
+    width: auto;
+    gap: 0.5em;
+    padding-right: 10px;
+  }
+  .navbar__links li {
+    padding: 0;
+  }
+  .navbar__hamburger, .navbar__menu-toggle {
+    display: none;
+  }
+}
+
+.home-section {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-heading {
+  font-size: 3.5em;
+}
+@media screen and (min-width: 577px) {
+  .main-heading {
+    font-size: 3.75em;
+  }
+}
+@media screen and (min-width: 769px) {
+  .main-heading {
+    font-size: 4em;
+  }
+}
+@media screen and (min-width: 1081px) {
+  .main-heading {
+    font-size: 5em;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

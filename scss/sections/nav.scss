@@ -1,0 +1,79 @@
+@use '../partials/media-queries' as q;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px;
+
+  &__logo {
+    color: white;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    display: none; /* Hidden on small screens */
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 2;
+    list-style: none;
+
+    li {
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+    &--open {
+      display: flex;
+    }
+  }
+
+  &__hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+  }
+
+  /* Hide the checkbox input visually but keep it accessible */
+  &__menu-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* When menu is open, show the links */
+  &__menu-toggle:checked + .navbar__hamburger + .navbar__links {
+    @extend .navbar__links--open;
+  }
+
+  @include q.large-tablet {
+    &__links {
+      display: flex;
+      flex-direction: row;
+      position: static;
+      justify-content: space-between;
+      width: auto;
+      gap: 0.5em;
+      padding-right: 10px;
+      li {
+        padding: 0;
+      }
+    }
+
+    &__hamburger,
+    &__menu-toggle {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../partials/media-queries' as q;
+.home-section {
+  height: 95vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-heading {
+  font-size: 3.5em;
+  @include q.tablet {
+    font-size: 3.75em;
+  }
+  @include q.large-tablet {
+    font-size: 4em;
+  }
+  @include q.desktop {
+    font-size: 5em;
+  }
+}
